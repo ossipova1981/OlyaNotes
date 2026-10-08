@@ -1,0 +1,42 @@
+apply plugin: "com.android.application"
+
+android {
+    compileSdk 32
+    buildToolsVersion "32.0.0"
+
+    defaultConfig {
+        applicationId "notes.olya.app"
+        minSdk 24
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+task copyWeb(type: Copy) {
+    from "${rootProject.projectDir.parentFile}"
+    include "index.html"
+    include "manifest.webmanifest"
+    include "sw.js"
+    include "icon-192.png"
+    include "icon-512.png"
+    include "src/**"
+    into "src/main/assets/www"
+}
+
+preBuild.dependsOn copyWeb

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>OlyaNotes</AssemblyName>
+    <RootNamespace>OlyaNotesDesktop</RootNamespace>
+    <ApplicationTitle>OlyaNotes</ApplicationTitle>
+    <Product>OlyaNotes</Product>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\index.html" Link="www\index.html" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\manifest.webmanifest" Link="www\manifest.webmanifest" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\sw.js" Link="www\sw.js" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\icon-192.png" Link="www\icon-192.png" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\icon-512.png" Link="www\icon-512.png" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\src\**\*" Link="www\src\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

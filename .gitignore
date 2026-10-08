@@ -1,0 +1,17 @@
+node_modules
+dist
+.DS_Store
+*.local
+data
+android/.gradle
+android/build
+android/app/build
+android/build-manual
+android/local.properties
+android/debug.keystore
+android/app/src/main/assets
+android/windows-certs.jks
+desktop/**/bin
+desktop/**/obj
+desktop/publish
+desktop/publish-standalone
